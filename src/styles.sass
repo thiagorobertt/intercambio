@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~materialize-css/sass/components/color'
+@import '~materialize-css/sass/components/variables'
+
+$primary-color: color("teal", "lighten-2")
+$primary-color-light: lighten($primary-color, 15%)
+$primary-color-dark: darken($primary-color, 15%)
+$secondary-color: color("teal", "lighten-1")
+$success-color: color("green", "base") 
+$error-color: color("red", "base") 
+$link-color: color("light-blue", "darken-1")
+$roboto-font-path: './assets/fonts/roboto/'
+
+@import '~materialize-css/sass/materialize'
