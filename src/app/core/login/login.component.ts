@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../../user/user.service';
-import { User } from '../../user/user';
 import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',
@@ -10,6 +9,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
   form: any;
+  @Output() loginComplete = new EventEmitter<boolean>();
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
@@ -24,8 +24,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.form.value);
-    // this.loginService.login(this.form.value.email, this.form.value.password);
-    this.loginService.login(this.form.value);
+    this.loginService.login(this.form.value).subscribe((res: any) => {
+      localStorage.setItem('token', res.token);
+      this.loginComplete.emit(true);
+    });
   }
 }

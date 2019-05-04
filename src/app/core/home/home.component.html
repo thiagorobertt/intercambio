@@ -34,7 +34,8 @@
         <div class="banner-container">
           <div class="banner-container-title">Medo de ir sozinho?</div>
           <div class="banner-container-text">
-            Se conecte com pessoas próximas a você antes da sua viagem e faça amizades facilmente através do nosso app.
+            Se conecte com pessoas próximas a você antes da sua viagem e faça
+            amizades facilmente através do nosso app.
           </div>
           <a
             class="margin-top-20 button-primary btn waves-effect deep-orange darken-2 white-text darken-text-2"
@@ -55,15 +56,15 @@
           <p class="text-default-primary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor
             dolor, convallis vel viverra in, mattis eget ex. Vestibulum mollis,
-            est a tincidunt tincidunt, quam lorem tincidunt mi, quis imperdiet dui
-            mi vel purus. Sed imperdiet tortor sit amet metus sollicitudin, vel
-            ullamcorper mauris cursus. Cras vel euismod sapien. Aliquam venenatis
-            ipsum eget hendrerit pharetra. Donec malesuada maximus elit sit amet
-            volutpat. Phasellus eget dui eget tortor iaculis fringilla eu et dui.
-            Duis pharetra iaculis est eu semper. Duis aliquam ex in neque pretium,
-            ut porta ex ultricies. Nunc sit amet ligula eget diam cursus blandit
-            vitae in augue. Vestibulum semper fringilla tincidunt. Maecenas eu
-            ipsum fringilla.
+            est a tincidunt tincidunt, quam lorem tincidunt mi, quis imperdiet
+            dui mi vel purus. Sed imperdiet tortor sit amet metus sollicitudin,
+            vel ullamcorper mauris cursus. Cras vel euismod sapien. Aliquam
+            venenatis ipsum eget hendrerit pharetra. Donec malesuada maximus
+            elit sit amet volutpat. Phasellus eget dui eget tortor iaculis
+            fringilla eu et dui. Duis pharetra iaculis est eu semper. Duis
+            aliquam ex in neque pretium, ut porta ex ultricies. Nunc sit amet
+            ligula eget diam cursus blandit vitae in augue. Vestibulum semper
+            fringilla tincidunt. Maecenas eu ipsum fringilla.
           </p>
         </div>
         <div class="col s4">
@@ -109,17 +110,17 @@
               EU curti...
             </div>
             <p class="text-default-comments">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor
-              dolor"
-            </p>
-            <p class="text-default-comments">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor
-              dolorLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               dolor dolor"
             </p>
             <p class="text-default-comments">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor
-              dolor"
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dolor dolorLorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed dolor dolor"
+            </p>
+            <p class="text-default-comments">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dolor dolor"
             </p>
             <a href="#" class="orange-text darken-3">e tem mais...</a>
           </div>
@@ -133,7 +134,7 @@
           <div class="col s4 offset-s4">
             <div class="row">
               <div class="col s12">
-                End. Rua Haddock Lobo, 578 - Cj. 82 <br>
+                End. Rua Haddock Lobo, 578 - Cj. 82 <br />
                 Jd. Paulista - São Paulo - SP
               </div>
               <div class="margin-top-20 col s12">
@@ -144,7 +145,7 @@
           <div class="col s4">
             <div class="row">
               <div class="col s12">
-                Telefone 1. (11) 4338-0972 <br>
+                Telefone 1. (11) 4338-0972 <br />
                 Telefone 2. (11) 4398-0982
               </div>
               <div class="margin-top-20 col s12">
@@ -175,7 +176,7 @@
             <li class="tab col s6"><a href="#cadastro">Cadastro</a></li>
           </ul>
         </div>
-        <div id="login" class="col s12"><app-login></app-login></div>
+        <div id="login" class="col s12"><app-login (loginComplete)="closeModal($event)"></app-login></div>
         <div id="cadastro" class="col s12">
           <app-user-form></app-user-form>
         </div>

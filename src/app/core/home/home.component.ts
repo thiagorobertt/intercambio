@@ -23,4 +23,9 @@ export class HomeComponent implements OnInit {
       this.modalActions.emit({ action: 'modal', params: ['open'] });
     }
   }
+  closeModal(close) {
+    if (close) {
+      this.modalActions.emit({ action: 'modal', params: ['close'] });
+    }
+  }
 }

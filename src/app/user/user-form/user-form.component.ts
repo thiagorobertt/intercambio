@@ -32,7 +32,7 @@ export class UserFormComponent implements OnInit {
         password: [null, [Validators.minLength(8), Validators.required]],
         confirmPassword: [null, [Validators.required]],
         birthdayDate: [null, [Validators.required]],
-        genre: [null, [Validators.required]]
+        genre: [null]
       },
       {
         validator: PasswordValidation.MatchPassword
