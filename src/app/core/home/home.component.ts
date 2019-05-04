@@ -9,22 +9,27 @@ import { MaterializeAction } from 'angular2-materialize';
 export class HomeComponent implements OnInit {
   carouselActions = new EventEmitter<string | MaterializeAction>();
   modalActions = new EventEmitter<string | MaterializeAction>();
-  constructor() {}
+  isLogged = false;
+  constructor() {
+    this.isLogged = localStorage.getItem('token') ? true : false;
+
+  }
 
   ngOnInit() {
+
     window.setInterval(() => {
       this.carouselActions.emit({ action: 'carousel', params: ['next'] });
     }, 10000);
   }
 
   onModalOpen(open: boolean) {
-    console.log(open);
     if (open) {
       this.modalActions.emit({ action: 'modal', params: ['open'] });
     }
   }
   closeModal(close) {
     if (close) {
+      this.isLogged = close;
       this.modalActions.emit({ action: 'modal', params: ['close'] });
     }
   }

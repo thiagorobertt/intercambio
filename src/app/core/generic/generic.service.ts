@@ -16,7 +16,7 @@ export class GenericService<T> {
     return this.http.get<T[]>(`${this.API_URL}`).pipe(delay(2000));
   }
 
-  fundById(id: string): Observable<T> {
+  findById(id: string): Observable<T> {
     return this.http.get<T>(`${this.API_URL}/${id}`).pipe(take(1));
   }
 

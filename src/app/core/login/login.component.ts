@@ -26,6 +26,11 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loginService.login(this.form.value).subscribe((res: any) => {
       localStorage.setItem('token', res.token);
+      this.userService
+        .findById(this.form.value.email)
+        .subscribe(user =>
+          localStorage.setItem('current-user', JSON.stringify(user))
+        );
       this.loginComplete.emit(true);
     });
   }

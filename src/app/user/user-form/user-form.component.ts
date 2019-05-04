@@ -41,9 +41,7 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
     const user: User = this.form.value as User;
-    console.log(user);
     user.birthdayDate = moment(user.birthdayDate, 'DDMMYYYY').format(
       'YYYY-MM-DD[T]HH:mm:ss'
     );
