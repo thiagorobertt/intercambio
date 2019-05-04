@@ -17,6 +17,7 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     ReactiveFormsModule,
     MaterializeModule,
     NgxMaskModule.forRoot(options)
-  ]
+  ],
+  exports: [UserFormComponent, UserDocsComponent, UserShippingsComponent]
 })
 export class UserModule {}

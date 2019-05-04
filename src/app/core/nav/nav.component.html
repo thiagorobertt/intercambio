@@ -9,8 +9,26 @@
         </div>
 
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Para onde ir?</a></li>
-          <li class="active"><a href="badges.html">Fazer Login</a></li>
+          <li><a [routerLink]="['/sale/chat-bot']">Para onde ir?</a></li>
+          <li>
+            <a
+              materialize="dropdown"
+              data-activates="dropdown1"
+              class="dropdown-trigger"
+              href="#!"
+              data-target="dropdown1"
+              >Pacotes<i class="material-icons right">arrow_drop_down</i></a
+            >
+          </li>
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a>Para casais</a></li>
+            <li><a>Para jovens</a></li>
+            <li><a>Com Bico</a></li>
+          </ul>
+          <li><a href="badges.html">Descontinho</a></li>
+          <li class="active black-text">
+            <a (click)="open()">Login</a>
+          </li>
         </ul>
       </div>
     </div>

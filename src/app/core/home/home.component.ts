@@ -8,7 +8,8 @@ import { MaterializeAction } from 'angular2-materialize';
 })
 export class HomeComponent implements OnInit {
   carouselActions = new EventEmitter<string | MaterializeAction>();
-  constructor() { }
+  modalActions = new EventEmitter<string | MaterializeAction>();
+  constructor() {}
 
   ngOnInit() {
     window.setInterval(() => {
@@ -16,4 +17,10 @@ export class HomeComponent implements OnInit {
     }, 10000);
   }
 
+  onModalOpen(open: boolean) {
+    console.log(open);
+    if (open) {
+      this.modalActions.emit({ action: 'modal', params: ['open'] });
+    }
+  }
 }
