@@ -4,9 +4,10 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CorerRoutingModule } from './core-routing.module';
 import { MaterializeModule } from 'angular2-materialize';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
-  declarations: [LoginComponent, HomeComponent],
+  declarations: [LoginComponent, HomeComponent, NavComponent],
   imports: [CommonModule, CorerRoutingModule, MaterializeModule],
-  exports: [LoginComponent, HomeComponent]
+  exports: [LoginComponent, HomeComponent, NavComponent]
 })
 export class CoreModule {}

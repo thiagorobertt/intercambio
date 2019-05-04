@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidation } from '../password-validation';
 import { UserService } from '../user.service';
 import { User } from '../user';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-user-form',
@@ -43,6 +44,10 @@ export class UserFormComponent implements OnInit {
     console.log(this.form.value);
     const user: User = this.form.value as User;
     console.log(user);
-    // this.userService.create(user).subscribe();
+    user.birthdayDate = moment(user.birthdayDate, 'DDMMYYYY').format(
+      'YYYY-MM-DD[T]HH:mm:ss'
+    );
+    user.profiles = [{ description: 'ROLE_USER' }];
+    this.userService.create(user).subscribe(u => console.log(u));
   }
 }

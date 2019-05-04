@@ -4,11 +4,14 @@ import { ResultsComponent } from './results/results.component';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
+import { SaleRoutingModule } from './sale-routing.module';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
-  declarations: [ResultsComponent, ChatBotComponent, CheckoutComponent, PaymentComponent],
+  declarations: [ResultsComponent, ChatBotComponent, CheckoutComponent, PaymentComponent, ConfirmationComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SaleRoutingModule
   ]
 })
 export class SaleModule { }

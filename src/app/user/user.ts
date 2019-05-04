@@ -2,9 +2,9 @@ export class User {
   name: string;
   rg?: string;
   cpf?: string;
-  birthdayDate: Date;
+  birthdayDate: string;
   email: string;
   gender: string;
   registerDate: Date;
-  profiles = [{ description: 'ROLE_USER' }];
+  profiles: [{ description: string }];
 }

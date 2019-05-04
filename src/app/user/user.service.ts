@@ -9,6 +9,6 @@ import { User } from './user';
 })
 export class UserService extends GenericService<User> {
   constructor(http: HttpClient) {
-    super(http, `${environment.API}/cvc/systems/users`);
+    super(http, `${environment.API}cvc/systems/users`);
   }
 }
