@@ -1,3 +1,54 @@
-<p>
-  chat-bot works!
-</p>
+<app-nav></app-nav>
+
+<div class="container">
+  <div materialize="carousel" [materializeParams]="[{fullWidth: true, duration: 200}]" class="carousel carousel-slider center" data-indicators="true">
+    <div class="container-question carousel-item black-text" href="#one!">
+      <h2 class="title-primary">Qual idioma você mais<br> gosta ou quer se especializar?</h2>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="Idioma" id="first_name" type="text" class="validate">
+              <label for="first_name">Pode digitar aqui ;)</label>
+            </div>
+          </div>
+        </form>
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect deep-orange darken-2 white-text darken-text-2">Próximo</a>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item black-text" href="#two!">
+      <h2 class="title-primary">O que você prefere? Um clima quentinho,<br> tipo geladeira ou mais ou menos?</h2>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="Clima" id="first_name" type="text" class="validate">
+              <label for="first_name">Pode escolher</label>
+            </div>
+          </div>
+        </form>
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect deep-orange darken-2 white-text darken-text-2">Próximo</a>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item black-text" href="#three!">
+      <h2 class="title-primary">Pra finalizar,<br> Netflix ou balada?</h2>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="Netflix ou balada" id="first_name" type="text" class="validate">
+              <label for="first_name">e ai?</label>
+            </div>
+          </div>
+        </form>
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect deep-orange darken-2 white-text darken-text-2">Resultado</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
