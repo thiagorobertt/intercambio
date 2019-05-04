@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-
+  carouselActions = new EventEmitter<string | MaterializeAction>();
   constructor() { }
 
   ngOnInit() {
+    window.setInterval(() => {
+      this.carouselActions.emit({ action: 'carousel', params: ['next'] });
+    }, 4000);
   }
 
 }

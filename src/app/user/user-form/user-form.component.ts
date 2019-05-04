@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { PasswordValidation } from '../password-validation';
+import { UserService } from '../user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-form',
@@ -6,10 +10,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-form.component.sass']
 })
 export class UserFormComponent implements OnInit {
-
-  constructor() { }
+  form: any;
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
+    this.form = this.formBuilder.group(
+      {
+        name: [
+          null,
+          [
+            Validators.required,
+            Validators.minLength(3),
+            Validators.maxLength(35)
+          ]
+        ],
+        email: [null, [Validators.required, Validators.email]],
+        password: [null, [Validators.minLength(8), Validators.required]],
+        confirmPassword: [null, [Validators.required]],
+        birthdayDate: [null, [Validators.required]],
+        genre: [null, [Validators.required]]
+      },
+      {
+        validator: PasswordValidation.MatchPassword
+      }
+    );
   }
 
+  onSubmit() {
+    console.log(this.form.value);
+    const user: User = this.form.value as User;
+    console.log(user);
+    // this.userService.create(user).subscribe();
+  }
 }
