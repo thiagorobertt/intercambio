@@ -6,5 +6,5 @@ export class User {
   email: string;
   gender: string;
   registerDate: Date;
-  profiles: [{ description: 'SYSTEM_USER' }];
+  profiles = [{ description: 'ROLE_USER' }];
 }

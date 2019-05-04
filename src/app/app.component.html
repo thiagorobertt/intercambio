@@ -1,5 +1,5 @@
 <body>
-  <div >
+  <div>
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Logo</a>
@@ -7,10 +7,23 @@
           <li><a href="sass.html">Sass</a></li>
           <li><a href="badges.html">Components</a></li>
           <li><a href="collapsible.html">JavaScript</a></li>
+          <li>
+            <a materialize="dropdown" href="#" data-activates="dropdown1"
+              >Drop Me!</a
+            >
+
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a>one</a></li>
+              <li><a>two</a></li>
+              <li class="divider"></li>
+              <li><a>three</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </nav>
-
-    <router-outlet></router-outlet>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </body>

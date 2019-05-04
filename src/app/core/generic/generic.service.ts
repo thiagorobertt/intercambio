@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GenericService<T> {
-  constructor(protected http: HttpClient, private API_URL: string) {}
+  constructor(private http: HttpClient, private API_URL: string) {}
 
   delete(id: string) {
     return this.http.delete(`${this.API_URL}/${id}`).pipe(take(1));
