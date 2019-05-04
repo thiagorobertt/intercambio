@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     window.setInterval(() => {
       this.carouselActions.emit({ action: 'carousel', params: ['next'] });
-    }, 4000);
+    }, 10000);
   }
 
 }
