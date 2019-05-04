@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -16,10 +16,6 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(user) {
-    this.http
-      .post<LoginResponse>(`${environment.API}login`, user)
-      .subscribe(data => {
-        console.log(data.authorization);
-      });
+    return this.http.post(`${environment.API}login`, user);
   }
 }

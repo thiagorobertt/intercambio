@@ -7,6 +7,8 @@ import { MaterializeModule } from 'angular2-materialize';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserModule } from '../user/user.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './jwt.interceptor';
 @NgModule({
   declarations: [LoginComponent, HomeComponent, NavComponent],
   imports: [

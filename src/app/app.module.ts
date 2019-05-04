@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './core/jwt.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,13 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

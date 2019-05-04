@@ -1,7 +1,7 @@
 <div>
   <div class="container-fixed">
     <div class="button-fixed-primary">
-      <a href=""><img src="assets/images/cvc-go.png"/></a>
+      <a [routerLink]="['/sale/chat-bot']"><img src="assets/images/cvc-go.png"/></a>
     </div>
   </div>
   <div
@@ -11,7 +11,7 @@
     [materializeActions]="carouselActions"
     data-indicators="true"
   >
-    <app-nav (openModal)="onModalOpen($event)"></app-nav>
+    <app-nav [isLogged]="isLogged" (openModal)="onModalOpen($event)"></app-nav>
     <div class="carousel-item red white-text" href="#one!">
       <img src="assets/images/banner-1.png" />
       <div class="container">
@@ -34,7 +34,8 @@
         <div class="banner-container">
           <div class="banner-container-title">Medo de ir sozinho?</div>
           <div class="banner-container-text">
-            Se conecte com pessoas próximas a você antes da sua viagem e faça amizades facilmente através do nosso app.
+            Se conecte com pessoas próximas a você antes da sua viagem e faça
+            amizades facilmente através do nosso app.
           </div>
           <a
             class="margin-top-20 button-primary btn waves-effect deep-orange darken-2 white-text darken-text-2"
@@ -110,7 +111,7 @@
           <div class="col s4 offset-s4">
             <div class="row">
               <div class="col s12">
-                End. Rua Haddock Lobo, 578 - Cj. 82 <br>
+                End. Rua Haddock Lobo, 578 - Cj. 82 <br />
                 Jd. Paulista - São Paulo - SP
               </div>
               <div class="margin-top-20 col s12">
@@ -121,7 +122,7 @@
           <div class="col s4">
             <div class="row">
               <div class="col s12">
-                Telefone 1. (11) 4338-0972 <br>
+                Telefone 1. (11) 4338-0972 <br />
                 Telefone 2. (11) 4398-0982
               </div>
               <div class="margin-top-20 col s12">
@@ -152,7 +153,7 @@
             <li class="tab col s6"><a class="cyan-text" href="#cadastro">Cadastro</a></li>
           </ul>
         </div>
-        <div id="login" class="col s12"><app-login></app-login></div>
+        <div id="login" class="col s12"><app-login (loginComplete)="closeModal($event)"></app-login></div>
         <div id="cadastro" class="col s12">
           <app-user-form></app-user-form>
         </div>

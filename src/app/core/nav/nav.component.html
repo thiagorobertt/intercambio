@@ -10,7 +10,7 @@
 
         <ul class="right hide-on-med-and-down">
           <li><a [routerLink]="['/sale/chat-bot']">Para onde ir?</a></li>
-          <li class="active black-text">
+          <li *ngIf="!isLogged" class="active black-text">
             <a (click)="open()">Faça o Login</a>
           </li>
         </ul>

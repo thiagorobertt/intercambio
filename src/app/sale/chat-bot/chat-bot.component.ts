@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
   selector: 'app-chat-bot',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-bot.component.sass']
 })
 export class ChatBotComponent implements OnInit {
+  carouselActions = new EventEmitter<string | MaterializeAction>();
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  nextQuestion() {
+    this.carouselActions.emit({ action: 'carousel', params: ['next'] });
   }
-
 }

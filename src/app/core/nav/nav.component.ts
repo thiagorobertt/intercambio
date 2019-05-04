@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
@@ -8,6 +8,7 @@ import { MaterializeAction } from 'angular2-materialize';
 })
 export class NavComponent implements OnInit {
   @Output() openModal = new EventEmitter<boolean>();
+  @Input() isLogged;
   constructor() {}
 
   ngOnInit() {}
