@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.sass']
 })
 export class NavComponent implements OnInit {
+  @Output() openModal = new EventEmitter<boolean>();
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  open() {
+    this.openModal.emit(true);
   }
-
 }

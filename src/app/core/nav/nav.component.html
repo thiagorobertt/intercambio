@@ -9,7 +9,7 @@
         </div>
 
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Para onde ir?</a></li>
+          <li><a [routerLink]="['/sale/chat-bot']">Para onde ir?</a></li>
           <li>
             <a
               materialize="dropdown"
@@ -26,7 +26,9 @@
             <li><a>Com Bico</a></li>
           </ul>
           <li><a href="badges.html">Descontinho</a></li>
-          <li class="active black-text"><a href="badges.html">Login</a></li>
+          <li class="active black-text">
+            <a (click)="open()">Login</a>
+          </li>
         </ul>
       </div>
     </div>
