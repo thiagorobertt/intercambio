@@ -8,14 +8,22 @@ import { SaleRoutingModule } from './sale-routing.module';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { MaterializeModule } from 'angular2-materialize';
 import { CoreModule } from '../core/core.module';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [ResultsComponent, ChatBotComponent, CheckoutComponent, PaymentComponent, ConfirmationComponent],
+  declarations: [
+    ResultsComponent,
+    ChatBotComponent,
+    CheckoutComponent,
+    PaymentComponent,
+    ConfirmationComponent
+  ],
   imports: [
     CommonModule,
     SaleRoutingModule,
     MaterializeModule,
-    CoreModule
+    CoreModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
-export class SaleModule { }
+export class SaleModule {}

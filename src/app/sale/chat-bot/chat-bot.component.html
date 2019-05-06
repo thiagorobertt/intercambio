@@ -7,134 +7,148 @@
     class="carousel carousel-slider center"
     [materializeActions]="carouselActions"
   >
-    <div class="container-question carousel-item black-text" href="#one!">
-      <h2 class="title-primary">
-        Qual idioma você mais<br />
-        gosta ou quer se especializar?
-      </h2>
-      <div class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class="col s6 offset-s3">
-              <select materialize="material_select">
-                <option
-                  *ngFor="
-                    let option of [
-                      {
-                        id: 1,
-                        name: 'Inglês'
-                      },
-                      {
-                        id: 2,
-                        name: 'Espanhol'
-                      },
-                      {
-                        id: 4,
-                        name: 'Francês'
-                      },
-                      {
-                        id: 5,
-                        name: 'Castelhano'
-                      }
-                    ]
-                  "
-                  [value]="option.id"
-                  >{{ option.name }}</option
+    <form [formGroup]="suggestions">
+      <div class="container-question carousel-item black-text" href="#one!">
+        <h2 class="title-primary">
+          Qual idioma você mais<br />
+          gosta ou quer se especializar?
+        </h2>
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class="col s6 offset-s3">
+                <select
+                  formControlName="languageControl"
+                  materialize="material_select"
                 >
-              </select>
+                  <option
+                    *ngFor="
+                      let option of [
+                        {
+                          id: 1,
+                          name: 'Inglês'
+                        },
+                        {
+                          id: 2,
+                          name: 'Espanhol'
+                        },
+                        {
+                          id: 4,
+                          name: 'Francês'
+                        },
+                        {
+                          id: 5,
+                          name: 'Castelhano'
+                        }
+                      ]
+                    "
+                    [value]="option.id"
+                    >{{ option.name }}</option
+                  >
+                </select>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="carousel-fixed-item center">
-          <a
-            (click)="nextQuestion()"
-            class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
-            >Próximo</a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item black-text" href="#two!">
-      <h2 class="title-primary">
-        O que você prefere? Um clima quentinho,<br />
-        tipo geladeira ou mais ou menos?
-      </h2>
-      <div class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class=" col s6 offset-s3">
-              <select materialize="material_select">
-                <option
-                  *ngFor="let option of ['QUENTE', 'FRIO', 'NEUTRO']"
-                  [value]="option"
-                  >{{ option }}</option
-                >
-              </select>
-            </div>
+          <div class="carousel-fixed-item center">
+            <a
+              (click)="nextQuestion()"
+              class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
+              >Próximo</a
+            >
           </div>
         </div>
-        <div class="carousel-fixed-item center">
-          <a
-            (click)="nextQuestion()"
-            class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
-            >Próximo</a
-          >
-        </div>
       </div>
-    </div>
-    <div class="carousel-item black-text" href="#three!">
-      <h2 class="title-primary">
-        Netflix ou balada?
-      </h2>
-      <div class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class=" col s6 offset-s3">
-              <select materialize="material_select">
-                <option
-                  *ngFor="let option of ['NETFLIX', 'BALADA']"
-                  [value]="option"
-                  >{{ option }}</option
+      <div class="carousel-item black-text" href="#two!">
+        <h2 class="title-primary">
+          O que você prefere? Um clima quentinho,<br />
+          tipo geladeira ou mais ou menos?
+        </h2>
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class=" col s6 offset-s3">
+                <select
+                  formControlName="weatherControl"
+                  materialize="material_select"
                 >
-              </select>
+                  <option
+                    *ngFor="let option of ['QUENTE', 'FRIO']"
+                    [value]="option"
+                    >{{ option }}</option
+                  >
+                </select>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="carousel-fixed-item center">
-          <a
-            (click)="nextQuestion()"
-            class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
-            >Próximo</a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item black-text" href="#four!">
-      <h2 class="title-primary">
-        Esses são os melhores destinos para você
-      </h2>
-      <div class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class=" col s6 offset-s3">
-              <select materialize="material_select">
-                <option
-                  *ngFor="let option of ['NETFLIX', 'BALADA']"
-                  [value]="option"
-                  >{{ option }}</option
-                >
-              </select>
-            </div>
+          <div class="carousel-fixed-item center">
+            <a
+              (click)="nextQuestion()"
+              class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
+              >Próximo</a
+            >
           </div>
         </div>
-        <div class="carousel-fixed-item center">
-          <a
-            (click)="nextQuestion()"
-            class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
-            >Resultado</a
-          >
+      </div>
+      <div class="carousel-item black-text" href="#three!">
+        <h2 class="title-primary">
+          Netflix ou balada?
+        </h2>
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class=" col s6 offset-s3">
+                <select
+                  formControlName="partyControl"
+                  materialize="material_select"
+                >
+                  <option
+                    *ngFor="let option of ['NETFLIX', 'BALADA']"
+                    [value]="option"
+                    >{{ option }}</option
+                  >
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-fixed-item center">
+            <a
+              (click)="getCountries()"
+              class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
+              >Próximo</a
+            >
+          </div>
         </div>
       </div>
-    </div>
+      <div class="carousel-item black-text" href="#four!">
+        <h2 class="title-primary">
+          Esses são os melhores destinos para você
+        </h2>
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div *ngIf="countries" class=" col s6 offset-s3">
+                <select
+                  formControlName="countryControl"
+                  materialize="material_select"
+                >
+                  <option
+                    *ngFor="let option of countries"
+                    [value]="option.countryId"
+                    >{{ option.countryName }} - {{option.seasonName}}</option
+                  >
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-fixed-item center">
+            <a
+              (click)="redirectToResult()"
+              class="btn waves-effect deep-orange darken-2 white-text darken-text-2"
+              >Resultado</a
+            >
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
